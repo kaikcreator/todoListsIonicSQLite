@@ -1,0 +1,50 @@
+<!--
+  Generated template for the AddTaskModal page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+ <ion-toolbar color="primary">
+   <ion-title>{{title}}</ion-title>
+   <ion-buttons start>
+     <button ion-button (click)="dismiss()">
+       <span color="secondary" showWhen="ios">Cancel</span>
+       <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+     </button>
+   </ion-buttons>
+ </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list no-lines>
+    <form class="container" (ngSubmit)="submit()">
+
+      <ion-item>
+        <ion-input placeholder="Task description" clearInput
+        [(ngModel)]="model.description" name="description" required
+        #descriptionState="ngModel"></ion-input>
+      </ion-item>
+
+      <ion-item color="danger" [hidden]="descriptionState.valid || descriptionState.untouched">
+        Description is required
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Is important</ion-label>
+        <ion-checkbox color="dark" [(ngModel)]="model.isImportant" name="isImportant"></ion-checkbox>
+      </ion-item>
+
+      <div class="submit-button">
+        <button ion-button block type="submit"
+        [disabled]="!descriptionState.valid">{{buttonText}}</button>
+      </div>
+
+    </form>
+  </ion-list>
+
+</ion-content>

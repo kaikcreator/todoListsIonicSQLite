@@ -1,0 +1,35 @@
+page-todos {
+    .warning{
+        color:red;
+    }
+
+    h3:first-child{
+        margin-top: 0.3em !important; 
+    }
+
+    ion-list{
+
+        .no-todos{
+            color: color($colors, light);
+            font-style: italic;
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.3em;
+        }
+        .item-block .item-inner{
+            border: none !important;
+        }
+
+        .item-block:last-child{
+            border: none !important;
+        }
+
+        .item-divider{
+            border: none !important;
+            padding-top: 10px;
+            background-color: transparent;
+            color: color($colors, light);
+            font-style: italic;
+        }
+    }
+}

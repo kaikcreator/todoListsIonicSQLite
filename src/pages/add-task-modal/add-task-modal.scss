@@ -1,0 +1,52 @@
+page-add-task-modal {
+
+    ion-list{
+        height: 100%;
+    }
+    
+    .container{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        padding: 50px;
+
+        >*{
+            margin-bottom: 30px;
+        }
+
+        .submit-button{
+            width:100%;
+            z-index: 999;
+        }
+
+        ion-item{
+            &.item-md-danger, &.item-ios-danger, &.item-wp-danger{
+                background-color:transparent;
+                color: color($colors, danger);
+                margin-top: -40px;
+                margin-bottom: -5px;
+
+                transition-property: opacity, visibility;
+                transition-duration: 0.3s;
+
+                &[hidden]{
+                    display: block !important;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition-property: opacity, visibility;
+                    transition-duration: 0.3s;
+                    transition-delay: 0.3s;
+                }
+            }
+
+            //prevents grey background in the X icon that allows to remove the input
+            button.text-input-clear-icon {
+                background-color: transparent;
+            }
+        }
+    }
+
+}
